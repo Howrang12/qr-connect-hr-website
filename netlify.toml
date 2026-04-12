@@ -1,4 +1,4 @@
 [build]
-  base = "frontend"
+  base = "src/frontend"
   publish = "dist"
   command = "corepack enable && pnpm install && pnpm build"
