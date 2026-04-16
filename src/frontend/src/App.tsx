@@ -146,7 +146,7 @@ function Header() {
           data-ocid="nav.link"
         >
           <img
-            src="/assets/uploads/QR%20Connect%20Logo.png"
+            src="/assets/uploads/QR-Connect-Logo-1.png"
             alt="QR Connect"
             className="w-9 h-9 object-contain"
           />
@@ -250,7 +250,7 @@ function HeroSection() {
             {/* Hero Image */}
             <div className="flex-shrink-0 lg:w-[420px] w-full flex items-center justify-center">
               <img
-                src="/assets/hr-team-meeting.dim_1200x700.jpg"
+                src="/assets/images/hr-team-meeting.jpg"
                 alt="HR Team Meeting"
                 className="w-full max-w-sm lg:max-w-none object-cover rounded-xl opacity-80"
                 loading="eager"
@@ -471,15 +471,15 @@ function HRImagesSection() {
 
   const images = [
     {
-      src: "/assets/hr-recruitment.dim_800x600.jpg",
+      src: "/assets/generated/hr-recruitment.dim_800x600.jpg",
       label: "Recruitment Excellence",
     },
     {
-      src: "/assets/compliance-management.dim_1200x800.jpg",
+      src: "/assets/generated/compliance-management.dim_1200x800.jpg",
       label: "Compliance Management",
     },
     {
-      src: "/assets/payroll-management.dim_1200x800.jpg",
+      src: "/assets/generated/payroll-management.dim_1200x800.jpg",
       label: "Payroll Management",
     },
   ];
@@ -540,7 +540,7 @@ function HRImagesSection() {
           style={{ height: "320px" }}
         >
           <img
-            src="/assets/hr-leadership.dim_1200x700.jpg"
+            src="/assets/generated/hr-leadership.dim_1200x700.jpg"
             alt="HR Leadership Team"
             className="w-full h-full object-cover"
           />
@@ -951,7 +951,7 @@ function ContactSection() {
                       Call Us
                     </p>
                     <p className="text-sm text-foreground/60 mt-0.5">
-                      +91 98917 46443
+                      +91 92181 13098
                     </p>
                   </div>
                 </div>
@@ -1011,7 +1011,7 @@ function Footer() {
           <div>
             <div className="flex items-center gap-2.5 mb-4">
               <img
-                src="/assets/uploads/QR%20Connect%20Logo.png"
+                src="/assets/uploads/QR-Connect-Logo-1.png"
                 alt="QR Connect"
                 className="w-10 h-10 object-contain"
               />
