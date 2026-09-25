@@ -766,11 +766,17 @@ function ContactSection() {
     fetch(`${webhookUrl}?${params.toString()}`, {
       method: "GET",
       mode: "no-cors",
-    }).finally(() => {
+        }).finally(() => {
+      // Google Ads conversion tracking
+      (window as any).gtag?.("event", "conversion", {
+        send_to: "AW-623220294/kLzwCMqtxIQdEMaslqkC",
+        value: 1.0,
+        currency: "INR",
+      });
+
       setSubmitted(true);
       if (formRef.current) formRef.current.reset();
     });
-  };
 
   return (
     <section id="contact" className="py-20">
