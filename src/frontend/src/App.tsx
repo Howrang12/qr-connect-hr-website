@@ -750,33 +750,40 @@ function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const params = new URLSearchParams({
-      name: (form.elements.namedItem("name") as HTMLInputElement).value,
-      email: (form.elements.namedItem("email") as HTMLInputElement).value,
-      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
-      company: (form.elements.namedItem("company") as HTMLInputElement).value,
-      message: (form.elements.namedItem("message") as HTMLTextAreaElement)
-        .value,
-    });
-    const webhookUrl =
-      "https://script.google.com/macros/s/AKfycbz2eExKx_6hAh31sm8EIEN4Z9VFuh_jNWSVxOghiaf3YUUQQPCWEZV-O8wQhUgpXSaO8g/exec";
-    fetch(`${webhookUrl}?${params.toString()}`, {
-      method: "GET",
-      mode: "no-cors",
-        }).finally(() => {
-      // Google Ads conversion tracking
-      (window as any).gtag?.("event", "conversion", {
-        send_to: "AW-623220294/kLzwCMqtxIQdEMaslqkC",
-        value: 1.0,
-        currency: "INR",
-      });
+const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
 
-      setSubmitted(true);
-      if (formRef.current) formRef.current.reset();
+  const form = e.currentTarget;
+
+  const params = new URLSearchParams({
+    name: (form.elements.namedItem("name") as HTMLInputElement).value,
+    email: (form.elements.namedItem("email") as HTMLInputElement).value,
+    phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+    company: (form.elements.namedItem("company") as HTMLInputElement).value,
+    message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+  });
+
+  const webhookUrl =
+    "https://script.google.com/macros/s/AKfycbz2eExKx_6hAh31sm8EIEN4Z9VFuh_jNWSVxOghiaf3YUUQQPCWEZV-O8wQhUgpXSaO8g/exec";
+
+  fetch(`${webhookUrl}?${params.toString()}`, {
+    method: "GET",
+    mode: "no-cors",
+  }).finally(() => {
+    // Google Ads conversion tracking
+    (window as any).gtag?.("event", "conversion", {
+      send_to: "AW-623220294/kLzwCMqtxIQdEMaslqkC",
+      value: 1.0,
+      currency: "INR",
     });
+
+    setSubmitted(true);
+
+    if (formRef.current) {
+      formRef.current.reset();
+    }
+  });
+};
 
   return (
     <section id="contact" className="py-20">
